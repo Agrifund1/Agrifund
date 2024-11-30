@@ -1,6 +1,6 @@
 # 🌾 AgriFund – Empowering Agriculture Through Blockchain 🌐  
 
-Welcome to **AgriFund**, the revolutionary platform that connects **farmers**, **investors**, and **businesses** through blockchain technology. We're here to transform agriculture, one block at a time. 🚜💰  
+Welcome to **AgriFund**, the revolutionary platform that connects **farmers**, **investors**, and **businesses** through decentralized technology. We're here to transform agriculture, one block at a time. 🚜💰  
 
 Check out our project live 👉 [AgriFund Platform](https://agri-fund-efzi.vercel.app/)  
 
@@ -53,8 +53,9 @@ We bridge the gap between technology and agriculture, empowering rural communiti
 
 ## 🔧 **Built With**  
 - **Frontend**: React.js, TypeScript  
-- **Backend**: Node.js, Express, Supabase  
-- **Blockchain**: Sui Blockchain  
+- **Backend**: Node.js, Express 
+- **Blockchain**: Sui Blockchain
+- **DataBase**: Supabase 
 
 ---
 
