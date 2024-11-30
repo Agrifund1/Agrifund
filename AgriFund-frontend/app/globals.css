@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 150 30% 98%;
+    --foreground: 150 50% 2%;
+    
+    --card: 150 30% 98%;
+    --card-foreground: 150 50% 2%;
+    
+    --popover: 150 30% 98%;
+    --popover-foreground: 150 50% 2%;
+    
+    --primary: 142 76% 25%;
+    --primary-foreground: 150 10% 98%;
+    
+    --secondary: 150 40% 92%;
+    --secondary-foreground: 142 76% 25%;
+    
+    --muted: 150 30% 94%;
+    --muted-foreground: 150 20% 40%;
+    
+    --accent: 142 50% 88%;
+    --accent-foreground: 142 76% 25%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 150 10% 98%;
+    
+    --border: 150 20% 88%;
+    --input: 150 20% 88%;
+    --ring: 142 76% 25%;
+    
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 150 50% 2%;
+    --foreground: 150 10% 98%;
+    
+    --card: 150 50% 3%;
+    --card-foreground: 150 10% 98%;
+    
+    --popover: 150 50% 3%;
+    --popover-foreground: 150 10% 98%;
+    
+    --primary: 142 76% 40%;
+    --primary-foreground: 150 10% 98%;
+    
+    --secondary: 150 30% 12%;
+    --secondary-foreground: 150 10% 98%;
+    
+    --muted: 150 30% 12%;
+    --muted-foreground: 150 20% 65%;
+    
+    --accent: 142 50% 18%;
+    --accent-foreground: 150 10% 98%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 150 10% 98%;
+    
+    --border: 150 30% 22%;
+    --input: 150 30% 22%;
+    --ring: 142 76% 40%;
+  }
+
+  /* Optimize font loading */
+  @font-face {
+    font-family: 'Inter';
+    font-display: swap;
+    src: url('/fonts/inter.woff2') format('woff2');
+  }
+
+  /* Add preload for critical assets */
+  head {
+    link[rel="preload"][as="font"] {
+      crossorigin: anonymous;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom gradients */
+.gradient-green {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary) / 0.1) 0%,
+    hsl(var(--primary) / 0.1) 50%,
+    hsl(var(--primary) / 0.1) 100%
+  );
+}
+
+.dark .gradient-green {
+  background: linear-gradient(
+    135deg,
+    hsl(var(--primary) / 0.1) 0%,
+    hsl(var(--primary) / 0.1) 50%,
+    hsl(var(--primary) / 0.1) 100%
+  );
+}
+
+/* Card patterns */
+.pattern-dots {
+  background-image: radial-gradient(
+    circle at center,
+    hsl(var(--primary) / 0.1) 1px,
+    transparent 1px
+  );
+  background-size: 16px 16px;
+}
+
+.pattern-grid {
+  background-image: 
+    linear-gradient(to right, hsl(var(--primary) / 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, hsl(var(--primary) / 0.1) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Improved text readability */
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Smooth transitions */
+* {
+  @apply transition-colors duration-200;
+}
+
+/* Card hover effects */
+.hover-card {
+  @apply transition-all duration-300 hover:shadow-lg hover:scale-[1.02];
+}
+
+/* Gradient text */
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--background));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.2);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.3);
+}
+
+/* Optimize animations */
+@layer utilities {
+  .animate-once {
+    animation-iteration-count: 1;
+  }
+  
+  .will-change-transform {
+    will-change: transform;
+  }
+}
+
+/* Add print styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+}
